@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // 检查浏览器是否支持
+      function checkBrowser() {
+        var ua = navigator.userAgent.toLowerCase();
+        var isIE = ua.indexOf('msie') > -1 || ua.indexOf('trident') > -1;
+        
+        // 获取主流浏览器版本
+        var chromeMatch = ua.match(/chrome\/(\d+)/);
+        var firefoxMatch = ua.match(/firefox\/(\d+)/);
+        var edgeMatch = ua.match(/edge\/(\d+)/) || ua.match(/edg\/(\d+)/);
+        
+        if (isIE) {
+          showBrowserAlert('IE');
+          return false;
+        }
+        
+        // 检查最低版本要求
+        if (chromeMatch && parseInt(chromeMatch[1]) < 70) {
+          showBrowserAlert('Chrome', 70);
+          return false;
+        }
+        if (firefoxMatch && parseInt(firefoxMatch[1]) < 63) {
+          showBrowserAlert('Firefox', 63);
+          return false;
+        }
+        if (edgeMatch && parseInt(edgeMatch[1]) < 79) {
+          showBrowserAlert('Edge', 79);
+          return false;
+        }
+        
+        return true;
+      }
+
+      // 显示浏览器提示
+      function showBrowserAlert(browser, minVersion) {
+        var message = '您当前使用的' + browser + (minVersion ? '版本过低' : '') + 
+          '浏览器可能无法正常使用本工具。\n\n' +
+          '推荐使用以下浏览器：\n' +
+          '• Chrome 70+\n' + 
+          '• Firefox 63+\n' +
+          '• Edge 79+';
+        alert(message);
+      }
+
+      // 执行检查
+      checkBrowser();
+    </script>
+    <title>文本提取器</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

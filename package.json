@@ -1,0 +1,30 @@
+{
+  "name": "text-extractor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.7.1",
+    "@codemirror/language": "^6.10.8",
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "@codemirror/view": "^6.36.1",
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/core": "^12.2.0",
+    "element-plus": "^2.9.1",
+    "vue": "^3.5.13",
+    "vue-codemirror": "^6.1.1",
+    "vue-toastification": "^2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.3",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-singlefile": "^2.1.0"
+  }
+}
